@@ -8,7 +8,8 @@ function FaqAccordion() {
     <div className='faq-section'>
         <div className='container d-flex flex-column align-items-center'>
             <h2 className='text-center text-capitalize mb-5'>FAQ</h2>
-            <p className='text-center mb-5'>Common Answers</p>
+            <p className='text-center mb-5'>Here are some frequently asked questions about our courses and admission process. If you have any other questions, please feel free to contact us directly.
+            </p>
             <Accordion defaultActiveKey="" flush>
                 <Accordion.Item eventKey='0'>
                     <Accordion.Header>How do I apply for a course?</Accordion.Header>
