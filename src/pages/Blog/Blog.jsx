@@ -16,7 +16,7 @@ const blogs = [
     {
         id: 1,
         img: [Blog1Img],
-        title: 'Blog 1',
+        title: 'Launch of Suba South TVC',
         description: 'National Treasury Cabinet Secretary John Mbadi.'
     },
     {
