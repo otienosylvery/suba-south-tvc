@@ -2,8 +2,17 @@
     background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/home-page-header.jpg);
 }
 
-.home-page header p {
-    width: 75%;
+.home-page header {
+  min-height: 75vh;
+  height: auto;
+  padding: 20px 0 50px;
+  background-size: cover;
+  background-position: center;
+}
+.banner {
+    align-items: center;
+    text-align: center;
+    
 }
 
 header {
@@ -16,9 +25,147 @@ header {
     background-size: cover;
     background-position: center;
 }
+/* =========================
+   ANNOUNCEMENT BANNER
+   ========================= */
 
-@media only screen and (max-width: 768px) {
-    .home-page header p {
-        width: 100%;
-    }
+.announcement-banner {
+  background: #dc3545;
+  color: #fff;
+  padding: 45px 30px;
+  margin: 25px auto;
+  width: 94%;
+  min-height: 200px;
+  height: auto;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center;
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  text-align: center;
+  animation: announcementPulse 5s ease-in-out infinite;
+}
+
+.announcement-badge {
+  background: #fff;
+  color: #dc3545;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.announcement-text h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.announcement-text p {
+  margin: 4px 0 0;
+  font-size: 1rem;
+}
+
+.announcement-button {
+  background: #fff;
+  color: #dc3545;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.announcement-button:hover {
+  background: #212529;
+  color: #fff;
+}
+
+/* Subtle attention animation */
+@keyframes announcementPulse {
+  0%,
+  85%,
+  100% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1.015);
+  }
+
+  95% {
+    transform: scale(1);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .announcement-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .announcement-text h2 {
+    font-size: 1.15rem;
+  }
+
+  .announcement-text p {
+    font-size: 0.95rem;
+  }
+
+  .announcement-button {
+    padding: 8px 18px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .announcement-content {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page header {
+    min-height: auto;
+    padding: 15px 0 40px;
+  }
+
+  .announcement-banner {
+    width: 92%;
+    min-height: 220px;
+    padding: 30px 20px;
+    margin: 15px auto 25px;
+  }
+
+  .announcement-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .announcement-text h2 {
+    font-size: 1.15rem;
+  }
+
+  .announcement-text p {
+    font-size: 0.95rem;
+  }
+
+  .announcement-button {
+    padding: 8px 18px;
+  }
+
+  .home-page header p {
+    width: 100%;
+  }
 }
