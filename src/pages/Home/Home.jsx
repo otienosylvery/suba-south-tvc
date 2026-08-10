@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import { supabase } from '../../lib/supabase';
 import ChooseSection from '../../components/ChooseSection/ChooseSection';
 import StartCoursesImg from '../../utils/images/start-courses-img.jpg';
 import FaqAccordion from '../../components/FaqAccordion/FaqAccordion';
@@ -8,6 +10,8 @@ import { Card } from 'react-bootstrap';
 import Blog1Img from '../../utils/images/blog1.png';
 import Blog2Img from '../../utils/images/blog2-img.jpg';
 import Blog3Img from '../../utils/images/blog3-img.jpg';
+
+
 
 const blogs = [
     {
@@ -31,10 +35,42 @@ const blogs = [
 ];
 
 function Home() {
+const [announcements, setAnnouncements] = useState([]);
+const [loadingAnnouncements, setLoadingAnnouncements] = useState(true);
+useEffect(() => {
+  const fetchAnnouncements = async () => {
+    const { data, error } = await supabase
+      .from('announcements')
+      .select('*')
+      .order('id', { ascending: false });
+
+    if (error) {
+      console.error('Error fetching announcements:', error);
+      setAnnouncements([]);
+    } else {
+      setAnnouncements(data || []);
+    }
+
+    setLoadingAnnouncements(false);
+  };
+
+  fetchAnnouncements();
+}, []);
   return (
     <div className='home-page'>
         <header className='h-100 min-vh-100 d-flex align-items-center text-light'>
             <div className='container d-flex flex-column align-items-center'>
+                {loadingAnnouncements ? (
+                    <p>Loading announcements...</p>
+                ) : announcements.length > 0 ? (
+                    announcements.map((announcement) => (
+                        <p key={announcement.id} className='text-center'>
+                            {announcement.message}
+                        </p>
+                    ))
+                ) : (
+                    <p>No announcements available.</p>
+                )}
                 <h1 className='text-center fw-semibold'>Suba South <br /> TVC</h1>
                 <p className='text-center'>Apply with Suba South TVC for courses in Building & Construction, Business Information Technology or  Social Works!</p>
                 <div className='d-flex flex-column flex-sm-row align-items-center mt-md-3'>
