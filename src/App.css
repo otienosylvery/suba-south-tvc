@@ -50,8 +50,8 @@ nav .navbar-toggler:focus {
 /* Dropdown items */
 .navbar .dropdown-menu .dropdown-item {
   color: #dc3545;
-  background-color: #fff5f5;
-  font-weight: 600;
+  /* background-color: #fff5f5; */
+  font-weight: 450;
   border-radius: 5px;
   padding: 10px 15px;
   transition: all 0.25s ease;
@@ -61,6 +61,7 @@ nav .navbar-toggler:focus {
 .navbar .dropdown-menu .dropdown-item:hover {
   color: #ffffff;
   background-color: #bd2130;
+  transition: all 0.25s ease;
 }
 
 /* Focus / keyboard navigation */

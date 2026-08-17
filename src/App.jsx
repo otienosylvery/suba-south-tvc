@@ -22,8 +22,9 @@ function App() {
     let todayYear = todayDate.getFullYear();
     setNewDate([todayYear])
   }, []);
+  const[admissionsDropdownOpen, setAdmissionsDropdownOpen] = useState(false);
  
-  // return (
+
   //   <div>
   //     <Navbar expand="lg" className='position-absolute w-100'>
   //       <Container>
@@ -171,7 +172,13 @@ function App() {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <NavDropdown title="Admissions" id="admissions-dropdown">
+            <NavDropdown 
+              title="Admissions" 
+              id="admissions-dropdown"
+              show={admissionsDropdownOpen}
+              onMouseEnter={() => setAdmissionsDropdownOpen(true)}
+              onMouseLeave={() => setAdmissionsDropdownOpen(false)}
+            >
               <NavDropdown.Item as={Link} to="/courses">
                 Apply
               </NavDropdown.Item>
