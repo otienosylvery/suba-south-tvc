@@ -206,10 +206,6 @@ function App() {
               </NavDropdown.Item>
             </NavDropdown>
 
-            {/* <Nav.Link as={Link} to="/about">
-              About us
-            </Nav.Link> */}
-
             <Nav.Link as={Link} to="/blog">
               Blog
             </Nav.Link>
