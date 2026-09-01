@@ -23,6 +23,7 @@ function App() {
     setNewDate([todayYear])
   }, []);
   const[admissionsDropdownOpen, setAdmissionsDropdownOpen] = useState(false);
+  const[aboutUsDropdownOpen, setAboutUsDropdownOpen] = useState(false);
  
 
   //   <div>
@@ -187,9 +188,27 @@ function App() {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link as={Link} to="/about">
+            <NavDropdown
+              title="About Us"
+              id="aboutus-dropdown"
+              show={aboutUsDropdownOpen}
+              onMouseEnter={() => setAboutUsDropdownOpen(true)}
+              onMouseLeave={() => setAboutUsDropdownOpen(false)}
+            >
+              <NavDropdown.Item as={Link} to="/about">
+                Who We Are
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/about">
+                Leadership
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/about">
+                Departments
+              </NavDropdown.Item>
+            </NavDropdown>
+
+            {/* <Nav.Link as={Link} to="/about">
               About us
-            </Nav.Link>
+            </Nav.Link> */}
 
             <Nav.Link as={Link} to="/blog">
               Blog

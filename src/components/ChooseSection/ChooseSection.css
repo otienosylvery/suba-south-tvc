@@ -1,4 +1,76 @@
-.choose-section svg {
+/* .choose-section svg {
+
     font-size: 3rem;
     color: #dc3545;
+} */
+
+.choose-section {
+    background: transparent;
+    color: #fff;
+}
+
+.choose-heading {
+    max-width: 750px;
+    margin: auto;
+}
+
+.choose-heading > span {
+    color: #dc3545;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.choose-heading h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin: 10px 0 15px;
+}
+
+.choose-heading p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+}
+
+
+/* CARDS */
+
+.choose-card {
+    background: #fff !important;
+    border-radius: 4px;
+    padding: 25px 20px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.choose-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.choose-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+
+    font-size: 2rem;
+}
+
+.choose-card .card-title {
+    color: #111827;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.choose-card .card-text {
+    color: #666;
+    line-height: 1.7;
+    font-size: 0.92rem;
 }
