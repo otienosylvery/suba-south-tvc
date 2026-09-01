@@ -13,7 +13,7 @@ const CourseFilters = ({
     <Row className="align-items-center my-4">
 
       <Col md={4}>
-        <h2 className="mb-0">
+        <h2 className="mb-0" style={{ color: "#fff", fontWeight: "600" }}>
           {totalCourses} Programmes Available
         </h2>
       </Col>
