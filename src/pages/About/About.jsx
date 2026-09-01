@@ -9,7 +9,9 @@ import {
     FaLightbulb,
     FaUsers,
     FaAward,
-    FaArrowRight
+    FaArrowRight,
+    FaShieldAlt,
+    FaSeedling
 } from 'react-icons/fa';
 
 import AboutUsSectionImg from '../../utils/images/about-us-section-img.jpg';
@@ -39,12 +41,12 @@ const studentImages = [
 
 const values = [
     {
-        icon: <FaAward />,
-        title: 'Excellence',
-        text: 'We strive for high standards in teaching, learning and professional development.'
+        icon: <FaUsers />,
+        title: 'Teamwork',
+        text: 'We strive for collaboration and unity in all our endeavors.'
     },
     {
-        icon: <FaHandshake />,
+        icon: <FaShieldAlt />,
         title: 'Integrity',
         text: 'We promote honesty, accountability and ethical conduct in all that we do.'
     },
@@ -54,9 +56,9 @@ const values = [
         text: 'We encourage creativity, practical problem-solving and new ideas.'
     },
     {
-        icon: <FaUsers />,
-        title: 'Inclusivity',
-        text: 'We believe in creating opportunities for learners from diverse backgrounds.'
+        icon: <FaSeedling />,
+        title: 'Environmental Sustainability',
+        text: 'We strongly believe in creating a sustainable future for all.'
     }
 ];
 
@@ -154,47 +156,63 @@ function About() {
             <section className="vision-mission-section">
                 <div className="container py-5">
                     <div className="row g-4">
+                        <div className="col-lg-4 d-flex flex-column">
+                            <span className='spanStyle'>
+                                MOTTO
+                            </span>
+                            
+                                <div className="vm-card flex-grow-1">
+                                    <div className="vm-icon">
+                                        <FaGraduationCap/>
+                                    </div>
 
-                        <div className="col-lg-6">
-                            <div className="vm-card vision-card">
-                                <div className="vm-icon">
-                                    <FaEye />
+                                    <div className="vm-content">
+                                        <p>
+                                            We strive to equip our learners with practical skills, foster innovation and inspire leadership for a brighter future.
+                                        </p>
+                                    </div>
                                 </div>
+                        
+                        </div>  
 
-                                <div>
-                                    <span>OUR VISION</span>
-                                    <h3>Building a skilled and empowered society</h3>
-                                    <p>
-                                        To be a centre of excellence in technical
-                                        and vocational education and training,
-                                        producing competent and innovative
-                                        graduates who contribute meaningfully
-                                        to society.
-                                    </p>
+                        {/* VISION */}
+                        <div className="col-lg-4 d-flex flex-column">
+                            <span className='spanStyle'>OUR VISION</span>
+
+                             
+                                <div className="vm-card flex-grow-1">
+                                    <div className="vm-icon">
+                                        <FaEye />
+                                    </div>
+
+                                    <div className="vm-content">
+                                        <p>
+                                            To be the premier institution for technical and vocational training, recognized for excellence, 
+                                            skills, and knowledge necessary to thrive in a dynamic economy.
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                       
                         </div>
-
-                        <div className="col-lg-6">
-                            <div className="vm-card mission-card">
+                        {/* MISSION */}
+                        <div className="col-lg-4 d-flex flex-column">
+                            <span className='spanStyle'>OUR MISSION</span>
+                            
+                            <div className="vm-card flex-grow-1">
                                 <div className="vm-icon">
                                     <FaBullseye />
                                 </div>
 
-                                <div>
-                                    <span>OUR MISSION</span>
-                                    <h3>Transforming potential into practical skills</h3>
+                                <div className="vm-content">
                                     <p>
-                                        To provide accessible, quality and
-                                        industry-responsive technical and
-                                        vocational training that equips learners
-                                        with the competencies needed for
-                                        employment, entrepreneurship and
-                                        lifelong learning.
+                                        To equip students with practical skills and hands-on-experience, making them competitive 
+                                        in the job market, ready to meet industry demands.
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                       
+                        </div>    
+                        
 
                     </div>
                 </div>
