@@ -12,10 +12,3 @@ export const supabase = createClient(
     supabasePublishableKey
 )
 
-// const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-// const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
-
-// console.log('Supabase URL loaded:', !!supabaseUrl);
-// console.log('Supabase key loaded:', !!supabaseKey);
-
-// export { supabaseUrl, supabaseKey };
