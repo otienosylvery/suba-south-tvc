@@ -8,7 +8,8 @@ import {
     faGears,
     faUtensils,
     faSeedling,
-    faArrowRight
+    faArrowRight,
+    faHardHat
 } from '@fortawesome/free-solid-svg-icons';
 
 import './Departments.css';
@@ -16,10 +17,11 @@ import './Departments.css';
 import DepartmentHeaderImg from '../../utils/images/courses-page-header.jpg';
 import ComputingImg from '../../utils/images/comp-lab.jpg';
 import BusinessImg from '../../utils/images/business-course.jpg';
-// import SocialWorkImg from '../../utils/images/departments/social-work.jpg';
+import LiberalStudiesImg from '../../utils/images/liberal-works.jpg';
 import EngineeringImg from '../../utils/images/bnc.png';
 import HospitalityImg from '../../utils/images/fnb.jpg';
-// import AgricultureImg from '../../utils/images/departments/agriculture.jpg';
+import AutomotiveImg from '../../utils/images/automotive-engineering.jpg';
+import AgricultureImg from '../../utils/images/agriculture.jpg';
 
 const departments = [
     {
@@ -40,42 +42,51 @@ const departments = [
         image: BusinessImg,
         slug: 'business-studies'
     },
-    // {
-    //     id: 3,
-    //     name: 'Social Work & Community Development',
-    //     description:
-    //         'Prepare learners to contribute meaningfully to communities through professional social work and development skills.',
-    //     icon: faPeopleGroup,
-    //     image: SocialWorkImg,
-    //     slug: 'social-work-community-development'
-    // },
+    {
+        id: 3,
+        name: 'Liberal Studies',
+        description:
+            'Prepare learners to contribute meaningfully to society through a broad-based education.',
+        icon: faPeopleGroup,
+        image: LiberalStudiesImg,
+        slug: 'liberal-studies'
+    },
     {
         id: 4,
-        name: 'Engineering',
+        name: 'Building & Civil Engineering',
         description:
             'Gain hands-on technical skills and competencies relevant to engineering, construction and industrial development.',
-        icon: faGears,
+        icon: faHardHat,
         image: EngineeringImg,
-        slug: 'engineering'
+        slug: 'building-civil-engineering'
     },
     {
         id: 5,
-        name: 'Hospitality',
+        name: 'Hospitality & Institutional Management',
         description:
             'Develop practical skills for careers in hospitality, food service, accommodation and related industries.',
         icon: faUtensils,
         image: HospitalityImg,
-        slug: 'hospitality'
+        slug: 'hospitality-institutional-management'
+    },
+    {
+        id: 6,
+        name: 'Mechanical & Automotive Engineering',
+        description:
+            'Develop practical skills for careers in automotive engineering, maintenance and repair.',
+        icon: faGears,
+        image: AutomotiveImg,
+        slug: 'mechanical-automotive-engineering'
+    },
+    {
+        id: 7,
+        name: 'Agriculture & Environmental Studies',
+        description:
+            'Acquire practical agricultural skills that support entrepreneurship, food production and sustainable development.',
+        icon: faSeedling,
+        image: AgricultureImg,
+        slug: 'agriculture'
     }
-    // {
-    //     id: 6,
-    //     name: 'Agriculture',
-    //     description:
-    //         'Acquire practical agricultural skills that support entrepreneurship, food production and sustainable development.',
-    //     icon: faSeedling,
-    //     image: AgricultureImg,
-    //     slug: 'agriculture'
-    // }
 ];
 
 function Departments() {
