@@ -37,6 +37,7 @@ const blogs = [
 function Home() {
 const [announcements, setAnnouncements] = useState([]);
 const [loadingAnnouncements, setLoadingAnnouncements] = useState(true);
+const [showAnnouncement, setShowAnnouncement] = useState(true);
 useEffect(() => {
   const fetchAnnouncements = async () => {
     const { data, error } = await supabase
@@ -60,45 +61,39 @@ useEffect(() => {
     <div className='home-page'>
         <header className='h-100 min-vh-100 d-flex align-items-center text-light'>
             <div className='container d-flex flex-column align-items-center'>
-                <section className="announcement-banner">
-                <div className="container">
-                    {loadingAnnouncements ? (
-                    <div className="announcement-loading">
-                        Loading announcements...
-                    </div>
-                    ) : announcements.length > 0 ? (
-                    announcements.map((announcement) => (
-                        <div
-                        key={announcement.id}
-                        className="announcement-content"
-                        >
-                        <div className="announcement-badge">
-                            📢 ANNOUNCEMENT
-                        </div>
+                {showAnnouncement && announcements.length > 0 && (
+                    <div className="announcement-overlay">
+                        <div className="announcement-popup">
 
-                        <div className="announcement-text">
-                            {/* <h2>{announcement.title}</h2> */}
-                            <p>{announcement.message}</p>
-                        </div>
-
-                        {announcement.button_text &&
-                            announcement.button_link && (
-                            <Link
-                                to={announcement.button_link}
-                                className="announcement-button"
+                            <button
+                                type="button"
+                                className="announcement-close"
+                                onClick={() => setShowAnnouncement(false)}
+                                aria-label="Close announcement"
                             >
-                                {announcement.button_text}
-                            </Link>
-                            )}
+                                &times;
+                            </button>
+
+                            <div className="announcement-badge">
+                                📢 ANNOUNCEMENT
+                            </div>
+
+                            <div className="announcement-text">
+                                <p>{announcements[0].message}</p>
+                            </div>
+
+                            {announcements[0].button_text &&
+                                announcements[0].button_link && (
+                                    <Link
+                                        to={announcements[0].button_link}
+                                        className="announcement-button"
+                                    >
+                                        {announcements[0].button_text}
+                                    </Link>
+                                )}
                         </div>
-                    ))
-                    ) : (
-                    <div className="announcement-loading">
-                        No announcements available.
                     </div>
-                    )}
-                </div>
-                </section>
+                )}
                 <h1 className='text-center fw-semibold'>Suba South <br /> TVC</h1>
                 <p className='text-center'>Apply with Suba South TVC for courses in Building & Construction, Business Information Technology or  Social Works!</p>
                 <div className='d-flex flex-column flex-sm-row align-items-center mt-md-3'>

@@ -76,6 +76,7 @@
 .department-card {
     background: #fff;
     border: 1px solid #eee;
+    border-radius: 10px;
     overflow: hidden;
     transition:
         transform 0.3s ease,
